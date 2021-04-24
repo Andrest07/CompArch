@@ -34,6 +34,10 @@ input = '10000'
 if dfa.accepts_input(input):
     for i in dfa.read_input_stepwise(input):
         print(i)
-    print('accepted')
+    print('Input accepted')
 else:
-    print('rejected')
+    try:
+        for i in dfa.read_input_stepwise(input):
+            print(i)
+    except:
+        print('Input rejected')
